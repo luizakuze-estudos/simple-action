@@ -11,6 +11,7 @@ jobs:
     steps:
 
       - name: Simple JS Action
+        id: greet # reference the outputs of the step later...
         # @main version/branch
         #uses: actions/hello-world-javascript-action@v1.1.2
         #uses: actions/hello-world-javascript-action@v1 
@@ -21,5 +22,5 @@ jobs:
           who-to-greet: Lulu
 
       - name: Log Greeting Time
-            #OUTPUT
+        #OUTPUT
         run: echo "${{steps.greet.outputs.time}}"
