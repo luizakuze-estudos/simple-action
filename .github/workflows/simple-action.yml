@@ -1,0 +1,25 @@
+name: Simple Action
+on: [push]
+
+
+#reference: https://github.com/actions/hello-world-javascript-action/tree/main
+
+
+jobs:
+  simple-action:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Simple JS Action
+        # @main version/branch
+        #uses: actions/hello-world-javascript-action@v1.1.2
+        #uses: actions/hello-world-javascript-action@v1 
+        #uses: actions/hello-world-javascript-action@SHA
+        uses: actions/hello-world-javascript-action@main
+        with:
+          #INPUT
+          who-to-greet: Lulu
+
+      - name: Log Greeting Time
+            #OUTPUT
+        run: echo "${{steps.greet.outputs.time}}"
